@@ -1,7 +1,7 @@
 import React from "react";
 import TechSkill from "./TechSkill";
 
-function TechSkills({ theame }) {
+function Techskills({ theame }) {
   const data = [
     { img: "/src/assets/techLogo/html-html5-thumbnail.png", name: "html" },
     {
@@ -82,7 +82,7 @@ function TechSkills({ theame }) {
       name: "Cloudinary",
     },
   ];
-  
+
   return (
     <div className="w-full h-full pb-5 mt-5 ">
       <h1 className="text-4xl text-center font-bold text-blue-400">Tools</h1>
@@ -97,4 +97,4 @@ function TechSkills({ theame }) {
   );
 }
 
-export default TechSkills;
+export default Techskills;

@@ -1,5 +1,5 @@
 import React from "react";
-import TechSkills from "../components/TechSkills";
+import Techskills from "../components/Techskills";
 // import { ClassSubtraction } from './../../node_modules/@eslint-community/regexpp/index.d';
 
 function About({ theame }) {
@@ -30,8 +30,7 @@ function About({ theame }) {
           websites for smartphones, tablets, and desktops.
         </p>
       </div>
-      <TechSkills theame={theame} />
-      
+      <Techskills theame={theame} />
     </div>
   );
 }

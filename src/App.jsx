@@ -9,7 +9,7 @@ import Contect from "./pages/Contect";
 // import ProjectCards from "./components/ProjectCards";
 import Navrbar from "./components/Navrbar";
 import Footer from "./components/Footer";
-import TechSkills from "./components/TechSkills";
+import Techskills from "./components/Techskills";
 
 function App() {
   const [theame, setTheame] = useState(true);
@@ -26,9 +26,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/project" element={<Project />} />
         <Route path="/contact" element={<Contect />} />
-        <Route path="/tools" element={<TechSkills />} />
+        <Route path="/tools" element={<Techskills />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
