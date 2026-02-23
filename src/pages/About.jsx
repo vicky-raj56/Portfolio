@@ -1,6 +1,5 @@
 import React from "react";
-import Techskills from "../components/Techskills";
-// import { ClassSubtraction } from './../../node_modules/@eslint-community/regexpp/index.d';
+import Techskills from "../components/Techskills.jsx";
 
 function About({ theame }) {
   return (

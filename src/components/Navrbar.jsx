@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 
 function Navrbar({ theame, setTheame }) {
-  const [clickMenu, setClickMenu] = useState(true);
+  // const [clickMenu, setClickMenu] = useState(true);
   const lightTheame = "/src/assets/cartoon-illustration-of-sun-free-png.webp";
 
   const darkTheame = "/src/assets/moon-png-35116.png";
@@ -32,11 +32,7 @@ function Navrbar({ theame, setTheame }) {
       <nav className=" relative flex items-center justify-between h-20 px-10 text-2xl font-semibold border-b-2 shadow-4xl ">
         <h1 className="w-15 overflow-hidden rounded-full bg-transparent">
           <Link to={"/"}>
-            <img
-              className="w-full rounded-full"
-              src="/src/assets/logo.webp"
-              alt=""
-            />
+            <img className="w-full rounded-full" src="/logo.webp" alt="logo" />
           </Link>
         </h1>
         <ul className="flex gap-10 items-center pr-10">

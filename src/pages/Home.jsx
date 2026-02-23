@@ -56,7 +56,7 @@ function Home({ theame, setTheame }) {
           <div className="right w-120  lg:w-[50%] ">
             <img
               className="lg:w-full  lg:h-full"
-              src="/src/assets/pngwing.com.png"
+              src="/pngwing.com.png"
               alt="laptop"
             />
           </div>
