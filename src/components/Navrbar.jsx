@@ -6,9 +6,9 @@ import { RxCross1 } from "react-icons/rx";
 
 function Navrbar({ theame, setTheame }) {
   // const [clickMenu, setClickMenu] = useState(true);
-  const lightTheame = "/src/assets/cartoon-illustration-of-sun-free-png.webp";
+  const lightTheame = "/cartoon-illustration-of-sun-free-png.webp";
 
-  const darkTheame = "/src/assets/moon-png-35116.png";
+  const darkTheame = "/moon-png-35116.png";
   const theameChange = (e) => {
     // const body = document.querySelector("body")
     setTheame(!theame);
