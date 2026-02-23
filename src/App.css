@@ -1,0 +1,21 @@
+/* nav ul li{
+
+
+} */
+/* nav ul li:hover{
+  border-bottom: 2px solid rgb(10, 27, 33);
+} */
+
+@media (max-width: 600px) {
+  nav ul li{
+    display: none;
+  }
+  
+}
+
+@media (max-width: 600px) {
+  nav div ul li{
+    display: block;
+  }
+  
+}
