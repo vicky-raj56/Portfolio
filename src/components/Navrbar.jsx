@@ -3,6 +3,8 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function Navrbar({ theame, setTheame }) {
   // const [clickMenu, setClickMenu] = useState(true);
@@ -27,52 +29,92 @@ function Navrbar({ theame, setTheame }) {
   function linkClick() {
     menu.current.style.left = "1000px";
   }
+
+  const navLogo = useRef();
+  const link = useRef();
+  const link2 = useRef();
+  const link3 = useRef();
+  const link4 = useRef();
+  const link5 = useRef();
+
+  // Using GSAP
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    gsap.from(navLogo.current, {
+      y: -300,
+      duration: 1,
+    });
+    tl.from(link.current, {
+      y: -200,
+      duration: 1,
+    });
+    tl.from(link2.current, {
+      y: -200,
+      duration: 1,
+    });
+    tl.from(link3.current, {
+      y: -200,
+      duration: 1,
+    });
+    tl.from(link4.current, {
+      y: -200,
+      // duration: 1,
+    });
+    tl.from(link5.current, {
+      y: -200,
+      // duration: 1,
+    });
+  });
+
   return (
     <div className="sticky top-0 z-5000 bg-white">
       <nav className=" relative flex items-center justify-between h-20 px-10 text-2xl font-semibold border-b-2 shadow-4xl ">
-        <h1 className="w-15 overflow-hidden rounded-full bg-transparent">
+        <div
+          ref={navLogo}
+          className="w-15 overflow-hidden rounded-full bg-transparent"
+        >
           <Link to={"/"}>
             <img className="w-full rounded-full" src="/logo.webp" alt="logo" />
           </Link>
-        </h1>
+        </div>
         <ul className="flex gap-10 items-center pr-10">
-          <li>
+          <li ref={link}>
             <Link
               to={"/"}
-              className="border-b-2 border-transparent hover:border-black transition-colors duration-300"
+              className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
             >
               Home
             </Link>
           </li>
-          <li>
+          <li ref={link2}>
             <Link
               to={"/about"}
-              className="border-b-2 border-transparent hover:border-black transition-colors duration-300"
+              className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
             >
               About
             </Link>
           </li>
-          <li>
+          <li ref={link3}>
             <Link
               to={"/project"}
-              className="border-b-2 border-transparent hover:border-black transition-colors duration-300"
+              className=" link border-b-2 border-transparent hover:border-black transition-colors duration-300"
             >
               Project
             </Link>
           </li>
 
-          <li>
+          <li ref={link4}>
             <Link
               to={"/tools"}
-              className="border-b-2 border-transparent hover:border-black transition-colors duration-300"
+              className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
             >
               Tools
             </Link>
           </li>
-          <li>
+          <li ref={link5}>
             <Link
               to={"/contact"}
-              className="border-b-2 border-transparent hover:border-black transition-colors duration-300"
+              className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
             >
               Contact
             </Link>

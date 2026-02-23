@@ -1,11 +1,27 @@
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import React, { useRef } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const ProjectCard = ({ projectDetails }) => {
   const { title, description, techStack, image, githubLink, liveLink } =
     projectDetails;
+
+  // using GSAP
+  const card = useRef();
+  useGSAP(() => {
+    gsap.to(card.current, {
+      y: -20,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+    });
+  });
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+    <div
+      ref={card}
+      className="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+    >
       {/* Project Image */}
       <div className="relative overflow-hidden h-48">
         <img

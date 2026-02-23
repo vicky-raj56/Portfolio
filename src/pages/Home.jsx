@@ -6,13 +6,39 @@ import About from "./About";
 import Contect from "./Contect";
 import SocialMedia from "../components/SocialMedia";
 import Project from "./Project";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 // import { ClassSubtraction } from './../../node_modules/@eslint-community/regexpp/index.d';
 
 function Home({ theame, setTheame }) {
   // const [theame, setTheame] = useState(true);
+  const image = useRef();
+  const heroleft = useRef();
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    gsap.from(heroleft.current, {
+      x: -300,
+      duration: 3,
+      ease: "power1.inOut",
+    });
+    tl.from(image.current, {
+      x: 500,
+      duration: 3,
+      ease: "power1.inOut",
+    });
+    tl.to(image.current, {
+      y: -15,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    });
+  });
+
   return (
     <div
-      className="w-full h-full"
+      className="w-full h-full overflow-hidden"
       style={
         theame
           ? { backgroundColor: "white", color: "black" }
@@ -25,7 +51,10 @@ function Home({ theame, setTheame }) {
         style={{ backgroundImage: `url(${Cloud})`, backgroundSize: "cover" }}
       >
         <main className="max-w-7xl lg:w-full lg:h-full mx-auto sm:h-screen md:h-screen flex flex-col lg:flex-row sm:justify-center  lg:items-center lg:justify-between px-2  lg:px-15 ">
-          <div className="left h-full w-full lg:h-full  lg:w-[50%]  flex flex-col   gap-3 pt-22 ">
+          <div
+            ref={heroleft}
+            className="left h-full w-full lg:h-full  lg:w-[50%]  flex flex-col   gap-3 pt-22 "
+          >
             <h1 className="text-3xl lg:text-7xl font-bold tracking-tight ">
               Hi,I am Vicky <br />
             </h1>
@@ -53,7 +82,7 @@ function Home({ theame, setTheame }) {
               </span>
             </button>
           </div>
-          <div className="right w-120  lg:w-[50%] ">
+          <div ref={image} className="right w-120  lg:w-[50%] ">
             <img
               className="lg:w-full  lg:h-full"
               src="/pngwing.com.png"
