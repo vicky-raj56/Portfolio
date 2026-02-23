@@ -82,6 +82,7 @@ function TechSkills({ theame }) {
       name: "Cloudinary",
     },
   ];
+  
   return (
     <div className="w-full h-full pb-5 mt-5 ">
       <h1 className="text-4xl text-center font-bold text-blue-400">Tools</h1>
