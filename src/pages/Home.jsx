@@ -3,10 +3,9 @@ import { IoMdDownload } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 import About from "./About";
-import TechSkills from "../components/TechSkills";
-import ProjectCards from "../components/ProjectCards";
 import Contect from "./Contect";
 import SocialMedia from "../components/SocialMedia";
+import Project from "./Project";
 // import { ClassSubtraction } from './../../node_modules/@eslint-community/regexpp/index.d';
 
 function Home({ theame, setTheame }) {
@@ -41,7 +40,14 @@ function Home({ theame, setTheame }) {
             <SocialMedia />
 
             <button className="text-3xl  font-semibold px-4 py-2 bg-blue-600 text-black rounded-2xl hover:bg-blue-400 cursor-pointer ml-10 mt-5 w-50 justify-center flex items-center">
-              <Link to={"/Resume-VICKY.pdf"} download={"Vicky_resume"} target="_blank"> Resume</Link>
+              <Link
+                to={"/Resume-VICKY.pdf"}
+                download={"Vicky_resume"}
+                target="_blank"
+              >
+                {" "}
+                Resume
+              </Link>
               <span className="pt-2.5 text-2xl text-blue-">
                 <IoMdDownload />
               </span>
@@ -57,7 +63,8 @@ function Home({ theame, setTheame }) {
         </main>
       </main>
       <About theame={theame} />
-      <ProjectCards />
+      {/* <ProjectCards /> */}
+      <Project />
       <Contect />
     </div>
   );

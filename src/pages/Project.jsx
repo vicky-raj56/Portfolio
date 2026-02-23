@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import ProjectCards from "../components/ProjectCards";
 
 function Project() {
   return (
     <div>
-      project
+      <ProjectCards />
     </div>
-  )
+  );
 }
 
-export default Project
+export default Project;
