@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import TechSkill from "./TechSkill";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Techskills({ theame }) {
   const data = [
@@ -82,13 +85,33 @@ function Techskills({ theame }) {
       name: "Cloudinary",
     },
   ];
+  gsap.registerPlugin(ScrollTrigger);
+  const scroll = useRef();
+  useGSAP(
+    () => {
+      gsap.from(".techcard", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: scroll.current,
+          start: "10% 80%", // " 1st(uss card ka jispe lagana aur to body ka) 2nd html body ka "
+          end: "60% 30%",
+          // markers: true,
+          // scrub: true,
+        },
+      });
+    },
+    { scope: scroll },
+  );
 
   return (
-    <div className="w-full h-full pb-5 mt-5 ">
+    <div ref={scroll} className="w-full h-full pb-5 mt-5 ">
       <h1 className="text-4xl text-center font-bold text-blue-400">Tools</h1>
       <div className="flex flex-wrap gap-5 pl-20 mt-5   max-w-7xl mx-auto px-15 ">
-        {data.map((data) => (
-          <div key={data}>
+        {data.map((data, idx) => (
+          <div className="techcard" key={idx}>
             <TechSkill data={data} theame={theame} />
           </div>
         ))}

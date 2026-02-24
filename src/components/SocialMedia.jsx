@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Github, Instagram } from "lucide-react";
 import { FaLinkedinIn } from "react-icons/fa";
 
+
 function SocialMedia() {
   return (
     <div>

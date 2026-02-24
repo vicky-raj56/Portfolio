@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef } from "react";
+import react, { useRef } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const ProjectCard = ({ projectDetails }) => {
@@ -17,6 +17,10 @@ const ProjectCard = ({ projectDetails }) => {
       yoyo: true,
     });
   });
+
+
+  
+  
   return (
     <div
       ref={card}

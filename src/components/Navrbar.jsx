@@ -31,40 +31,31 @@ function Navrbar({ theame, setTheame }) {
   }
 
   const navLogo = useRef();
-  const link = useRef();
-  const link2 = useRef();
-  const link3 = useRef();
-  const link4 = useRef();
-  const link5 = useRef();
+
+  const ulcontainer = useRef();
 
   // Using GSAP
-  useGSAP(() => {
-    const tl = gsap.timeline();
-    gsap.from(navLogo.current, {
-      y: -300,
-      duration: 1,
-    });
-    tl.from(link.current, {
-      y: -200,
-      duration: 1,
-    });
-    tl.from(link2.current, {
-      y: -200,
-      duration: 1,
-    });
-    tl.from(link3.current, {
-      y: -200,
-      duration: 1,
-    });
-    tl.from(link4.current, {
-      y: -200,
-      // duration: 1,
-    });
-    tl.from(link5.current, {
-      y: -200,
-      // duration: 1,
-    });
-  });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+      gsap.from(navLogo.current, {
+        // y: -300,
+        scale: 0.3,
+        opacity: 0,
+        duration: 2,
+        ease: "back.out(1.7)",
+      });
+
+      tl.from("li", {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.4,
+        ease: "power2.out",
+      });
+    },
+    { scope: ulcontainer },
+  );
 
   return (
     <div className="sticky top-0 z-5000 bg-white">
@@ -77,8 +68,8 @@ function Navrbar({ theame, setTheame }) {
             <img className="w-full rounded-full" src="/logo.webp" alt="logo" />
           </Link>
         </div>
-        <ul className="flex gap-10 items-center pr-10">
-          <li ref={link}>
+        <ul ref={ulcontainer} className="flex gap-10 items-center pr-10">
+          <li>
             <Link
               to={"/"}
               className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
@@ -86,7 +77,7 @@ function Navrbar({ theame, setTheame }) {
               Home
             </Link>
           </li>
-          <li ref={link2}>
+          <li>
             <Link
               to={"/about"}
               className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
@@ -94,7 +85,7 @@ function Navrbar({ theame, setTheame }) {
               About
             </Link>
           </li>
-          <li ref={link3}>
+          <li>
             <Link
               to={"/project"}
               className=" link border-b-2 border-transparent hover:border-black transition-colors duration-300"
@@ -103,7 +94,7 @@ function Navrbar({ theame, setTheame }) {
             </Link>
           </li>
 
-          <li ref={link4}>
+          <li>
             <Link
               to={"/tools"}
               className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
@@ -111,7 +102,7 @@ function Navrbar({ theame, setTheame }) {
               Tools
             </Link>
           </li>
-          <li ref={link5}>
+          <li>
             <Link
               to={"/contact"}
               className="link border-b-2 border-transparent hover:border-black transition-colors duration-300"
@@ -133,6 +124,7 @@ function Navrbar({ theame, setTheame }) {
           </p>
         </ul>
 
+        {/* phone navbar */}
         <div
           ref={menu}
           className="phone  z-200 w-65 rounded-lg h-100 block sm:hidden lg:hidden top-20 overflow-hidden   bg-white left-1000 absolute  border "

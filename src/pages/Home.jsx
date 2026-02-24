@@ -15,6 +15,7 @@ function Home({ theame, setTheame }) {
   // const [theame, setTheame] = useState(true);
   const image = useRef();
   const heroleft = useRef();
+  const imgRef = useRef();
   useGSAP(() => {
     const tl = gsap.timeline();
     gsap.from(heroleft.current, {
@@ -34,6 +35,13 @@ function Home({ theame, setTheame }) {
       yoyo: true,
       ease: "power1.inOut",
     });
+    // gsap.to(imgRef.current, {
+    //   rotate: 360,
+    //   repeat: -1,
+    //   duration: 1,
+    //   ease: "none"
+    //   // yoyo:true
+    // });
   });
 
   return (
@@ -59,7 +67,8 @@ function Home({ theame, setTheame }) {
               Hi,I am Vicky <br />
             </h1>
             <p className="text-2xl  lg:text-5xl font-medium tracking-tight ">
-              <span>Full Stack Developer</span>
+              <span>Full </span> <span>Stack</span> {""}
+              <span>Developer</span>
             </p>
             <p className="text-xl md:text-3xl  font-medium">
               I am a Front-End / Full-Stack developer. <br />
@@ -82,12 +91,18 @@ function Home({ theame, setTheame }) {
               </span>
             </button>
           </div>
-          <div ref={image} className="right w-120  lg:w-[50%] ">
-            <img
-              className="lg:w-full  lg:h-full"
-              src="/pngwing.com.png"
-              alt="laptop"
-            />
+          <div
+            ref={image}
+            className="right w-120 rounded-full  lg:w-[50%] flex items-center justify-center p-5"
+          >
+            <div className="img w-100 h-100 rounded-full overflow-hidden  ">
+              <img
+                ref={imgRef}
+                className="lg:w-110 rounded-full  lg:h-110 object-cover  bg-center"
+                src="/home-logo1720287601920-ee8c503af775.webp"
+                alt="laptop"
+              />
+            </div>
           </div>
         </main>
       </main>
