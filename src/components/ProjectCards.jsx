@@ -24,6 +24,16 @@ function ProjectCards() {
       githubLink: "https://github.com/vicky-raj56/Airbnb-like-project-",
       liveLink: "https://tripnest-8xs3.onrender.com/listings",
     },
+
+    {
+      title: "basic ecomerce cartPage using Redux/toolKit ",
+      description:
+        "i'm using the only frontend implment using Redux and Reduxtoolkit for sentralize tha data ,i am continue to build full ecomerce .",
+      techStack: ["React JS", "Axios", "Redux?ToolKit", "Tailwind"],
+      image: "/ecomerce.jpg",
+      githubLink: "https://github.com/vicky-raj56/ecomerceCartPage",
+      liveLink: "https://vickyecomercepage.vercel.app/",
+    },
   ];
 
   gsap.registerPlugin(ScrollTrigger);
